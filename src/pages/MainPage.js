@@ -107,7 +107,7 @@ const MainPage = () => {
         {/* "Play!" Button */}
         <div className="flex justify-center my-20 mb-20">
           <button className="button" onClick={() => navigate('/home')}>
-            Play!
+            Browse!
           </button>
         </div>
 
