@@ -15,7 +15,7 @@ const Login = () => {
     try {
       await auth.signInWithEmailAndPassword(email, password);
       console.log('Signed in successfully');
-      navigate('/home');
+      navigate('/');
     } catch (error) {
       console.error('Error signing in:', error);
       alert('Error signing in: ' + error.message);
@@ -30,7 +30,7 @@ const Login = () => {
     try {
       const result = await auth.signInWithPopup(googleAuthProvider);
       console.log('User Info:', result.user);
-      navigate('/home');
+      navigate('/');
     } catch (error) {
       console.error('Error during Google sign-in:', error);
       alert('Error during Google sign-in: ' + error.message); // Added error handling
