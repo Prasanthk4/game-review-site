@@ -1,0 +1,130 @@
+.button {
+  --main-color: rgb(46, 213, 115);
+  --main-bg-color: rgba(46, 213, 116, 0.36);
+  --pattern-color: rgba(46, 213, 116, 0.073);
+  filter: hue-rotate(0deg);
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.5rem;
+  background: radial-gradient(
+      circle,
+      var(--main-bg-color) 0%,
+      rgba(0, 0, 0, 0) 95%
+    ),
+    linear-gradient(var(--pattern-color) 1px, transparent 1px),
+    linear-gradient(to right, var(--pattern-color) 1px, transparent 1px);
+  background-size: cover, 15px 15px, 15px 15px;
+  background-position: center center, center center, center center;
+  border-image: radial-gradient(
+      circle,
+      var(--main-color) 0%,
+      rgba(0, 0, 0, 0) 100%
+    ) 1;
+  border-width: 1px 0 1px 0;
+  color: var(--main-color);
+  padding: 1rem 3rem;
+  font-weight: 700;
+  font-size: 1.5rem;
+  transition: background-size 0.2s ease-in-out;
+}
+
+.button:hover {
+  background-size: cover, 10px 10px, 10px 10px;
+}
+
+.button:active {
+  filter: hue-rotate(250deg);
+}
+
+
+/* Dropdown and Account Info Styling */
+.account-dropdown {
+  position: relative;
+  display: flex;
+  align-items: center; 
+}
+
+.account-dropdown button {
+  display: flex;
+  align-items: center; 
+  padding: 8px;
+  border: none; 
+  background: transparent; 
+  min-width: 40px; 
+  min-height: 40px; 
+  overflow: visible; 
+}
+
+.account-dropdown svg {
+  width: 50px; 
+  height: 50px; 
+  margin-right: 2px; 
+}
+
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%; 
+  right: 0;
+  background-color: #333; 
+  min-width: 200px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+  padding: 10px;
+  z-index: 1;
+}
+
+.account-dropdown:hover .dropdown-content,
+.account-dropdown .dropdown-content.show {
+  display: block;
+}
+
+.dropdown-item {
+  color: #ffffff;
+  padding: 10px;
+  text-decoration: none;
+  display: block;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.dropdown-item:hover {
+  background-color: #555;
+}
+
+.wishlist-title {
+  font-weight: bold;
+  padding: 8px 0;
+  color: #ddd;
+}
+
+.wishlist-item {
+  padding: 6px;
+  color: #bbb;
+}
+
+.logout-button {
+  background-color: #c0200a;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.logout-button:hover {
+  background-color: #a31808;
+}
+.wishlist-link {
+  background-color: #c0200a;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.wishlist-link:hover {
+  background-color: #a31808;
+}
