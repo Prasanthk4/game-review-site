@@ -10,7 +10,6 @@ const platformIcons = {
   xbox: <FaXbox className="text-xl text-green-500" />,
 };
 
-
 const getPlatformIcon = (platformSlug) => {
   if (platformSlug.includes("pc")) return platformIcons.pc;
   if (platformSlug.includes("linux")) return platformIcons.linux;
@@ -50,17 +49,17 @@ const GameCard = ({ game, onAddToWishlist, onRemoveFromWishlist, filter }) => {
   };
 
   return (
-    <div className="service-card w-[350px] shadow-xl cursor-pointer snap-start shrink-0 bg-white flex flex-col items-start gap-3 transition-all duration-300 group hover:bg-[#202127] py-4 px-6">
-      <Link to={`/game/${game.id}`}>
+    <div className="service-card w-full sm:w-[350px] shadow-xl cursor-pointer snap-start shrink-0 bg-white flex flex-col items-start gap-3 transition-all duration-300 group hover:bg-[#202127] py-4 px-6">
+      <Link to={`/game/${game.id}`} className="w-full">
         <img
           src={game.background_image}
           alt={game.name}
-          className="w-full object-cover rounded-lg mb-2"
+          className="w-full h-48 sm:h-auto object-cover rounded-lg mb-2"
         />
-        <p className="font-bold text-2xl group-hover:text-white text-black/80" style={{ fontFamily: "Poppins, sans-serif" }}>
+        <p className="font-bold text-xl sm:text-2xl group-hover:text-white text-black/80" style={{ fontFamily: "Poppins, sans-serif" }}>
           {game.name}
         </p>
-        <p className="text-gray-400 text-sm" style={{ fontFamily: "Poppins, sans-serif" }}>
+        <p className="text-gray-400 text-xs sm:text-sm" style={{ fontFamily: "Poppins, sans-serif" }}>
           Released: {game.released}
         </p>
         {/* Display Unique Platform Icons */}
@@ -73,7 +72,7 @@ const GameCard = ({ game, onAddToWishlist, onRemoveFromWishlist, filter }) => {
             WebkitTextFillColor: "transparent",
             fontFamily: "Roboto Mono, monospace",
           }}
-          className="text-5xl font-bold self-end"
+          className="text-4xl sm:text-5xl font-bold self-end"
         >
           {game.rating}
         </p>
@@ -82,7 +81,7 @@ const GameCard = ({ game, onAddToWishlist, onRemoveFromWishlist, filter }) => {
       <button
         title="Save"
         onClick={handleClick}
-        className="cursor-pointer flex items-center fill-lime-400 bg-lime-950 hover:bg-lime-900 active:border active:border-lime-400 rounded-md duration-100 p-2 mt-4"
+        className="cursor-pointer flex items-center fill-lime-400 bg-lime-950 hover:bg-lime-900 active:border active:border-lime-400 rounded-md duration-100 p-2 mt-4 w-full sm:w-auto justify-center sm:justify-start"
       >
         <svg viewBox="0 -0.5 25 25" height="20px" width="20px" xmlns="http://www.w3.org/2000/svg">
           <path
@@ -100,7 +99,7 @@ const GameCard = ({ game, onAddToWishlist, onRemoveFromWishlist, filter }) => {
         <button
           title="Remove"
           onClick={handleRemove}
-          className="cursor-pointer flex items-center fill-red-400 bg-red-950 hover:bg-red-900 active:border active:border-red-400 rounded-md duration-100 p-2 mt-4"
+          className="cursor-pointer flex items-center fill-red-400 bg-red-950 hover:bg-red-900 active:border active:border-red-400 rounded-md duration-100 p-2 mt-4 w-full sm:w-auto justify-center sm:justify-start"
         >
           <svg viewBox="0 -0.5 25 25" height="20px" width="20px" xmlns="http://www.w3.org/2000/svg">
             <path
